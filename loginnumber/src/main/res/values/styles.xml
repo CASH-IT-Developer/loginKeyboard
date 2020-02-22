@@ -33,9 +33,9 @@
         <item name="android:tag">number_button</item>
     </style>
 
-    <style name="EditTextCashit" parent="Widget.AppCompat.EditText">
+    <style name="EditTextCashit" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/nunito_bold</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:paddingLeft">@dimen/_100sdp</item>
         <item name="android:paddingRight">@dimen/_100sdp</item>
 

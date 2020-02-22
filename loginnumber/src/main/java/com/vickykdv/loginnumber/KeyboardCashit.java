@@ -18,7 +18,7 @@ import androidx.annotation.IdRes;
 
 public class KeyboardCashit extends FrameLayout implements View.OnClickListener {
 
-    private EditText mPasswordField;
+    private TextView mPasswordField;
     private TextView txt_forgotpass;
     private ImageView img_showpassword,img_finger;
     private OnClickListener clickListener;
@@ -64,7 +64,7 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
         $(R.id.img_backspace).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Editable editable = mPasswordField.getText();
+                Editable editable = (Editable) mPasswordField.getText();
                 int charCount = editable.length();
                 if (charCount > 0) {
                     editable.delete(charCount - 1, charCount);
