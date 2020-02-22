@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/password_field"
+            style="@style/EditTextCashit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:background="@drawable/edittext_style_default"
+            android:enabled="false"
+            android:gravity="center_horizontal|center_vertical"
+            android:inputType="numberPassword"
+            android:singleLine="true"
+            android:textIsSelectable="false"
+            android:textSize="24sp"
+            tools:text="123456" />
+
+        <ImageView
+            android:id="@+id/img_showpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/password_field"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_14sdp"
+            app:srcCompat="@drawable/ic_visibility_off_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_14sdp"
+        android:padding="4dp"
+        android:text="Lupa password ?"
+        android:textAlignment="center"
+        tools:text="Lupa password ?" />
+
+    <TableLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/keyboard_divider"
+        android:orientation="vertical">
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/t9_key_1"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_one" />
+
+            <TextView
+                android:id="@+id/t9_key_2"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_two" />
+
+            <TextView
+                android:id="@+id/t9_key_3"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_three" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/t9_key_4"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_four" />
+
+            <TextView
+                android:id="@+id/t9_key_5"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_five" />
+
+            <TextView
+                android:id="@+id/t9_key_6"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_six" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <TextView
+                android:id="@+id/t9_key_7"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_seven" />
+
+            <TextView
+                android:id="@+id/t9_key_8"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_eight" />
+
+            <TextView
+                android:id="@+id/t9_key_9"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_nine" />
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <ImageView
+                android:id="@+id/img_finger"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:layout_weight="1"
+                android:padding="@dimen/_14sdp"
+                app:srcCompat="@drawable/ic_fingerprint_black_24dp"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/t9_key_0"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/number_zero" />
+
+            <ImageView
+                android:id="@+id/img_backspace"
+                style="@style/keyboard_number_button"
+                android:layout_margin="@dimen/_14sdp"
+                android:layout_weight="1"
+                android:padding="@dimen/_14sdp"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                tools:ignore="VectorDrawableCompat" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
