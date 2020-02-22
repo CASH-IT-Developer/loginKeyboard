@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final KeyboardCashit keyboardCashit = findViewById(R.id.keyboard);
-        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6);
+        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,false);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override
             public void onFingerClick() {

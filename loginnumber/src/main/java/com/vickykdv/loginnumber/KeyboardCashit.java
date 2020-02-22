@@ -124,9 +124,11 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
         if(showFinger){
             img_finger.setImageDrawable(getResources().getDrawable(R.drawable.ic_fingerprint_black_24dp));
             img_finger.setOnClickListener(this);
+            img_finger.setEnabled(true);
         }else{
             img_finger.setImageDrawable(null);
             img_finger.setOnClickListener(null);
+            img_finger.setEnabled(false);
         }
 
         BuilderKeyboard(maxLenght);
@@ -205,16 +207,19 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
 
 
     private void BuilderKeyboard(final int lenght){
-        img_finger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    clickListener.onFingerClick();
-                }catch (Exception e){
-                    Log.d("KeyboardCashit", "onClick: "+e.getMessage());
+
+            img_finger.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    try {
+                        clickListener.onFingerClick();
+                    } catch (Exception e) {
+                        Log.d("KeyboardCashit", "onClick: " + e.getMessage());
+                    }
                 }
-            }
-        });
+            });
+
 
         txt_forgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -256,9 +261,11 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
                 if (mPasswordField.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_off_black_24dp));
                     mPasswordField.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    mPasswordField.setTextColor(getResources().getColor(R.color.colorPrimary));
                 } else {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_black_24dp));
                     mPasswordField.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    mPasswordField.setTextColor(getResources().getColor(R.color.colorAccent));
                 }
             }
         });

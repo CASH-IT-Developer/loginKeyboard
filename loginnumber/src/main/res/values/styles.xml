@@ -35,6 +35,7 @@
 
     <style name="EditTextCashit" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:paddingLeft">@dimen/_100sdp</item>
         <item name="android:paddingRight">@dimen/_100sdp</item>
 
