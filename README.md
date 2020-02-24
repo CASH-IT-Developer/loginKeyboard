@@ -2,7 +2,7 @@
 Library for login, set pin , forgot password and layout with keyboard number
 
 ### How To Use
-     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.0"
+     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.1"
 
 ### Implementation in XML
 
