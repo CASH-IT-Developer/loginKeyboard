@@ -22,7 +22,7 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
     private TextView txt_forgotpass;
     private ImageView img_showpassword,img_finger;
     private OnClickListener clickListener;
-    private ValueListener changedListener;
+    private CompleteListener completeListener;
 
     public KeyboardCashit(Context context) {
         super(context);
@@ -80,8 +80,8 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
     }
 
 
-    public void onTextWatcher(final ValueListener changedListener){
-        this.changedListener = changedListener;
+    public void onCompletePIN(final CompleteListener changedListener){
+        this.completeListener = changedListener;
     }
 
 
@@ -91,8 +91,8 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
 
     }
 
-    public interface ValueListener{
-        void CheckListen();
+    public interface CompleteListener{
+        void ComlpletePIN();
     }
 
 
@@ -251,7 +251,7 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
                     mPasswordField.setBackground(getResources().getDrawable(R.drawable.edittext_style_default));
                 }
                 if(lenght == mPasswordField.length())
-                    changedListener.CheckListen();
+                    completeListener.ComlpletePIN();
             }
         });
 
@@ -261,11 +261,11 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
                 if (mPasswordField.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_off_black_24dp));
                     mPasswordField.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    mPasswordField.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    mPasswordField.setTextColor(getResources().getColor(R.color.ck_Primary));
                 } else {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_black_24dp));
                     mPasswordField.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    mPasswordField.setTextColor(getResources().getColor(R.color.colorAccent));
+                    mPasswordField.setTextColor(getResources().getColor(R.color.ck_text));
                 }
             }
         });

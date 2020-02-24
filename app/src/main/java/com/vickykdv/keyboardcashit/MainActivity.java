@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        keyboardCashit.onTextWatcher(new KeyboardCashit.ValueListener() {
+        keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
             @Override
-            public void CheckListen() {
+            public void ComlpletePIN() {
                 Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
             }
+
         });
 
 

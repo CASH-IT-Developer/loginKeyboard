@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/ck_Primary</item>
+        <item name="colorPrimaryDark">@color/ck_PrimaryDark</item>
+        <item name="colorAccent">@color/ck_text</item>
         <item name="android:fontFamily">@font/nunito_bold</item>
     </style>
 
@@ -35,7 +35,7 @@
 
     <style name="EditTextCashit" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/nunito_bold</item>
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/ck_Primary</item>
         <item name="android:paddingLeft">@dimen/_100sdp</item>
         <item name="android:paddingRight">@dimen/_100sdp</item>
 
