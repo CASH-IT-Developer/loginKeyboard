@@ -9,12 +9,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.IdRes;
+
+import com.vickykdv.loginnumber.R;
 
 public class KeyboardCashit extends FrameLayout implements View.OnClickListener {
 

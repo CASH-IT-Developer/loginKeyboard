@@ -3,10 +3,10 @@ package com.vickykdv.keyboardcashit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.vickykdv.loginnumber.KeyboardCashit;
+
 
 public class MainActivity extends AppCompatActivity {
 
