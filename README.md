@@ -47,9 +47,9 @@ Library for login, set pin , forgot password and layout with keyboard number
 
 
           //Listen value PIN (check validasi with lenght PIN)
-          keyboardCashit.onTextWatcher(new KeyboardCashit.ValueListener() {
-               @Override
-               public void CheckListen() {
+          keyboard.onCompletePIN(new KeyboardCashit.CompleteListener() {
+                     @Override
+                     public void ComlpletePIN() {
                     Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
                     }
                });
