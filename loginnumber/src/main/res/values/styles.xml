@@ -33,7 +33,10 @@
         <item name="android:tag">number_button</item>
     </style>
 
-    <style name="EditTextCashit" parent="Widget.AppCompat.TextView">
+    <style name="ckEditText" parent="Widget.AppCompat.TextView">
+        <item name="android:editable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:selectable">false</item>
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:textColor">@color/ck_Primary</item>
         <item name="android:paddingLeft">@dimen/_100sdp</item>

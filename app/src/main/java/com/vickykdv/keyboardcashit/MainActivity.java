@@ -1,9 +1,10 @@
 package com.vickykdv.keyboardcashit;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.vickykdv.loginnumber.KeyboardCashit;
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
             @Override
             public void ComlpletePIN() {
-                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
+                //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
+                Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
             }
 
         });
