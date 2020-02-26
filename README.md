@@ -1,15 +1,8 @@
 # Keyboard Login
 Library for login, set pin , forgot password and layout with keyboard number
 
-Hide Password          |  Show Password
-:-------------------------:|:-------------------------:
-![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/CashitKeyboard/master/ck1.jpeg)  |  ![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/CashitKeyboard/master/ck2.jpeg)
-
-
-
-
 ### How To Use
-     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.7"
+     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.3"
 
 ### Implementation in XML
 
