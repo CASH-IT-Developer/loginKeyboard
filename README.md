@@ -1,12 +1,12 @@
 # Keyboard Login
 Library for login, set pin , forgot password and layout with keyboard number
 
-[![](https://jitpack.io/v/CASH-IT-Developer/CashitKeyboard.svg)](https://jitpack.io/#CASH-IT-Developer/CashitKeyboard)
+[![](https://jitpack.io/v/CASH-IT-Developer/loginKeyboard.svg)](https://jitpack.io/#CASH-IT-Developer/loginKeyboard)
 
 
 Hide Password              |  Show Password
 :-------------------------:|:-------------------------:
-![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/CashitKeyboard/master/ck1.jpeg)  |  ![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/CashitKeyboard/master/ck2.jpeg)
+![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/loginKeyboard/master/ck1.jpeg)  |  ![alt text](https://raw.githubusercontent.com/CASH-IT-Developer/loginKeyboard/master/ck2.jpeg)
 
 
 
