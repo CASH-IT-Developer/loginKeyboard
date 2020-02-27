@@ -63,6 +63,7 @@
             android:id="@+id/keyboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_14dp"
             android:orientation="vertical">
 
             <TableRow style="@style/keyboard_row">
