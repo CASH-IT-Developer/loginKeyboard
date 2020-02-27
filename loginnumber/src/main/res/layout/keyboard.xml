@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,11 +28,11 @@
                 android:layout_marginBottom="@dimen/_14sdp"
                 android:enabled="true"
                 android:gravity="center_horizontal|center_vertical"
-                android:hint="123456"
                 android:inputType="numberPassword"
                 android:singleLine="true"
                 android:textIsSelectable="false"
                 android:textSize="24sp"
+                tools:ignore="TextViewEdits"
                 tools:text="123456" />
 
             <ImageView
@@ -42,7 +43,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="@dimen/_14sdp"
                 app:srcCompat="@drawable/ic_visibility_off_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
 
         </RelativeLayout>
 
@@ -53,7 +54,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="@dimen/_14sdp"
             android:padding="4dp"
-            android:text="Lupa password ?"
+            android:text="@string/lupa_password"
             android:textAlignment="center"
             tools:text="Lupa password ?" />
 
@@ -134,7 +135,7 @@
                     android:layout_weight="1"
                     android:padding="18dp"
                     app:srcCompat="@drawable/ic_fingerprint_black_24dp"
-                    tools:ignore="VectorDrawableCompat" />
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
 
                 <TextView
                     android:id="@+id/t9_key_0"
@@ -148,7 +149,7 @@
                     android:layout_weight="1"
                     android:padding="18dp"
                     app:srcCompat="@drawable/ic_backspace"
-                    tools:ignore="VectorDrawableCompat" />
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
             </TableRow>
         </TableLayout>
 

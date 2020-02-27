@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.CASH-IT-Developer:loginKeyboard:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/524469fca2017d05e25086263d8522c8/loginKeyboard-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/524469fca2017d05e25086263d8522c8/loginKeyboard-1.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CASH-IT-Developer/loginKeyboard/1.0.0/e53444e64fcf0acd766f80b9d8a28a634e9e949b/loginKeyboard-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
