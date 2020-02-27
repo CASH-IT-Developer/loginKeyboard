@@ -8,7 +8,7 @@ Hide Password              |  Show Password
 
 
 ### How To Use
-     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.1.2"
+     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.1.3"
 
 ### Implementation in XML
 
