@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final KeyboardCashit keyboardCashit = findViewById(R.id.keyboard);
-        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,false);
+        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,true);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override
             public void onFingerClick() {
@@ -36,9 +36,20 @@ public class MainActivity extends AppCompatActivity {
             public void ComlpletePIN() {
                 //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
                 Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
+
+                if(!keyboardCashit.getInputText().matches("123456")){
+                  keyboardCashit.clearPassword();
+                    Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
+
+                }
             }
 
         });
+
+
+
 
 
     }

@@ -35,10 +35,10 @@
 
     <style name="ckEditText" parent="Widget.AppCompat.TextView">
         <item name="android:editable">false</item>
+        <item name="android:background">@drawable/edittext_style_default</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:selectable">false</item>
         <item name="android:fontFamily">@font/nunito_bold</item>
-        <item name="android:textColor">@color/ck_Primary</item>
         <item name="android:paddingLeft">@dimen/_100sdp</item>
         <item name="android:paddingRight">@dimen/_100sdp</item>
 

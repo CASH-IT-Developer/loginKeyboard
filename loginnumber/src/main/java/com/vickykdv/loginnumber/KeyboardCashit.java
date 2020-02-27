@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 import androidx.annotation.IdRes;
 
-import com.vickykdv.loginnumber.R;
-
 public class KeyboardCashit extends FrameLayout implements View.OnClickListener {
 
     private TextView mPasswordField;
@@ -74,6 +72,12 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
         });
 
 
+    }
+
+    public void clearPassword(){
+        if(mPasswordField.length()>0){
+            mPasswordField.setText("");
+        }
     }
 
     public void setClickListener(final OnClickListener clickListener) {
@@ -262,11 +266,9 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
                 if (mPasswordField.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_off_black_24dp));
                     mPasswordField.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    mPasswordField.setTextColor(getResources().getColor(R.color.ck_Primary));
                 } else {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_black_24dp));
                     mPasswordField.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    mPasswordField.setTextColor(getResources().getColor(R.color.ck_text));
                 }
             }
         });

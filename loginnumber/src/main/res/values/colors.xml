@@ -3,7 +3,7 @@
     <color name="ck_Primary">#FACA00</color>
     <color name="ck_PrimaryDark">#FACA00</color>
     <color name="ck_text">#262626</color>
-    <color name="ck_pressed">#ADFFEA81</color>
+    <color name="ck_pressed">#08000000</color>
     <color name="ck_secondary">#EBEBEB</color>
     <color name="ck_red">#C9FF0000</color>
     <color name="ck_white">#ffffff</color>
