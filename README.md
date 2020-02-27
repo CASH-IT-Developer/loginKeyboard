@@ -8,7 +8,7 @@ Hide Password              |  Show Password
 
 
 ### How To Use
-     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.6"
+     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.1.2"
 
 ### Implementation in XML
 
@@ -56,7 +56,17 @@ Hide Password              |  Show Password
           keyboard.onCompletePIN(new KeyboardCashit.CompleteListener() {
                      @Override
                      public void ComlpletePIN() {
-                    Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
+                    //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
+                                    Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
+                    
+                    //Testing Wrong password
+                                    if(!keyboardCashit.getInputText().matches("123456")){
+                                      keyboardCashit.clearPassword();
+                                        Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
+                                    }else{
+                                        Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
+                    
+                                    }
                     }
                });
         
