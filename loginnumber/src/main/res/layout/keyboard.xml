@@ -26,6 +26,7 @@
                 android:layout_marginTop="@dimen/_14sdp"
                 android:layout_marginEnd="@dimen/_14sdp"
                 android:layout_marginBottom="@dimen/_14sdp"
+                android:background="@drawable/ck_edittext_style_default"
                 android:enabled="true"
                 android:gravity="center_horizontal|center_vertical"
                 android:inputType="numberPassword"

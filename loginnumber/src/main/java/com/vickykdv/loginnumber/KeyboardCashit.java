@@ -251,9 +251,9 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
             @Override
             public void afterTextChanged(Editable editable) {
                 if(mPasswordField.length() > 0){
-                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.edittext_style_selected));
+                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_selected));
                 }else{
-                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.edittext_style_default));
+                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
                 }
                 if(lenght == mPasswordField.length())
                     completeListener.ComlpletePIN();
