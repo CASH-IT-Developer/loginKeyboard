@@ -11,12 +11,13 @@ import com.vickykdv.loginnumber.KeyboardCashit;
 
 public class MainActivity extends AppCompatActivity {
 
+    public KeyboardCashit keyboardCashit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final KeyboardCashit keyboardCashit = findViewById(R.id.keyboard);
+         keyboardCashit= findViewById(R.id.keyboard);
         keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,true);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override

@@ -17,11 +17,11 @@ import androidx.annotation.IdRes;
 
 public class KeyboardCashit extends FrameLayout implements View.OnClickListener {
 
-    private TextView mPasswordField;
-    private TextView txt_forgotpass;
-    private ImageView img_showpassword,img_finger;
-    private OnClickListener clickListener;
-    private CompleteListener completeListener;
+    public TextView mPasswordField;
+    public TextView txt_forgotpass;
+    public ImageView img_showpassword,img_finger;
+    public OnClickListener clickListener;
+    public CompleteListener completeListener;
 
     public KeyboardCashit(Context context) {
         super(context);
@@ -38,12 +38,12 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
         init();
     }
 
-    private void init() {
+    public void init() {
         inflate(getContext(), R.layout.keyboard, this);
         initViews();
     }
 
-    private void initViews() {
+    public void initViews() {
         mPasswordField = $(R.id.password_field);
         img_showpassword = $(R.id.img_showpassword);
         txt_forgotpass = $(R.id.txt_forgotpass);
