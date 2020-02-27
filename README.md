@@ -11,7 +11,19 @@ Hide Password              |  Show Password
 
 
 ### How To Use
-     implementation "com.github.CASH-IT-Developer:CashitKeyboard:1.0.0"
+     dependencies {
+     	        implementation 'com.github.CASH-IT-Developer:loginKeyboard:Tag'
+     	}
+     
+     
+### `and` 
+     
+     allprojects {
+     		repositories {
+     			...
+     			maven { url 'https://jitpack.io' }
+     		}
+     	}
 
 ### Implementation in XML
 
