@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="_35sdp">35dp</dimen>
-    <dimen name="_24sdp">24dp</dimen>
-    <dimen name="_14sdp">14dp</dimen>
-    <dimen name="_100sdp">100dp</dimen>
-    <dimen name="_48sdp">48dp</dimen>
+    <dimen name="_35dp">35dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="_14dp">14dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_48dp">48dp</dimen>
 </resources>

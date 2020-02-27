@@ -38,8 +38,8 @@
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:selectable">false</item>
         <item name="android:fontFamily">@font/nunito_bold</item>
-        <item name="android:paddingLeft">@dimen/_100sdp</item>
-        <item name="android:paddingRight">@dimen/_100sdp</item>
+        <item name="android:paddingLeft">@dimen/_14dp</item>
+        <item name="android:paddingRight">@dimen/_14dp</item>
 
     </style>
 
