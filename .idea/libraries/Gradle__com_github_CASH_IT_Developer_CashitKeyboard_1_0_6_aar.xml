@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.CASH-IT-Developer:CashitKeyboard:1.0.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ccbc0606dad36a634eaed29887e0f52c/CashitKeyboard-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ccbc0606dad36a634eaed29887e0f52c/CashitKeyboard-1.0.6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.CASH-IT-Developer/CashitKeyboard/1.0.6/6f118850c7406aa6a3923fde3c310ed1a00ed054/CashitKeyboard-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
