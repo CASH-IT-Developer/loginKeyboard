@@ -1,7 +1,8 @@
 package com.vickykdv.keyboardcashit;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,22 +33,47 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
+        keyboardCashit.mPasswordField.addTextChangedListener(new TextWatcher() {
             @Override
-            public void CompletePIN() {
-                //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
-                Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if(!keyboardCashit.getInputText().matches("123456")){
-                  keyboardCashit.clearPassword();
-                    Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
-
-                }
             }
 
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.length() == 6){
+                    if(!keyboardCashit.getInputText().matches("123456")){
+                        keyboardCashit.clearPassword();
+                        Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
         });
+
+//        keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
+//            @Override
+//            public void CompletePIN() {
+//                //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
+//                Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
+//
+//                if(!keyboardCashit.getInputText().matches("123456")){
+//                  keyboardCashit.clearPassword();
+//                    Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
+//                }else{
+//                    Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
+//
+//                }
+//            }
+//
+//        });
 
 
 

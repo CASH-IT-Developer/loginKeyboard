@@ -2,7 +2,6 @@ package com.vickykdv.loginnumber;
 
 import android.content.Context;
 import android.text.Editable;
-import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -17,11 +16,11 @@ import androidx.annotation.IdRes;
 
 public class KeyboardCashit extends LinearLayout implements View.OnClickListener {
 
-    private TextView mPasswordField;
+    public TextView mPassword;
     private TextView txt_forgotpass;
     private ImageView img_showpassword,img_finger;
     private OnClickListener clickListener;
-    private CompleteListener completeListener;
+//    private CompleteListener completeListener;
 
     public KeyboardCashit(Context context) {
         super(context);
@@ -44,7 +43,7 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
     }
 
     private void initViews() {
-        mPasswordField = $(R.id.password_field);
+        mPassword = $(R.id.password_field);
         img_showpassword = $(R.id.img_showpassword);
         txt_forgotpass = $(R.id.txt_forgotpass);
         img_finger = $(R.id.img_finger);
@@ -63,20 +62,18 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
         $(R.id.img_backspace).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Editable editable = (Editable) mPasswordField.getText();
+                Editable editable = (Editable) mPassword.getText();
                 int charCount = editable.length();
                 if (charCount > 0) {
                     editable.delete(charCount - 1, charCount);
                 }
             }
         });
-
-
     }
 
     public void clearPassword(){
-        if(mPasswordField.length()>0){
-            mPasswordField.setText("");
+        if(mPassword.length()>0){
+            mPassword.setText("");
         }
     }
 
@@ -85,9 +82,9 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
     }
 
 
-    public void onCompletePIN(final CompleteListener changedListener){
-        this.completeListener = changedListener;
-    }
+//    public void onCompletePIN(final CompleteListener changedListener){
+//        this.completeListener = changedListener;
+//    }
 
 
     public interface OnClickListener {
@@ -95,29 +92,29 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
         void onForgotClick();
 
     }
-
-    public interface CompleteListener{
-        void CompletePIN();
-    }
+//
+//    public interface CompleteListener{
+//        void CompletePIN();
+//    }
 
 
     @Override
     public void onClick(View v) {
         if (v.getTag() != null && "number_button".equals(v.getTag())) {
-            mPasswordField.append(((TextView) v).getText());
+            mPassword.append(((TextView) v).getText());
             return;
         }
     }
 
     public String getInputText() {
-        return mPasswordField.getText().toString();
+        return mPassword.getText().toString();
     }
 
 
-    public void KeyboardBuilder(String forgotText,boolean showForgot,int maxLenght,boolean showFinger){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-        mPasswordField.setFilters(fArray);
+    public void KeyboardBuilder(String forgotText,boolean showForgot,boolean showFinger){
+//        InputFilter[] fArray = new InputFilter[1];
+//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+//        mPassword.setFilters(fArray);
 
         txt_forgotpass.setText(forgotText);
         if(showForgot){
@@ -136,30 +133,14 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
             img_finger.setEnabled(false);
         }
 
-        BuilderKeyboard(maxLenght);
-
-    }
-
-    public void KeyboardBuilder(String forgotText,boolean showForgot,int maxLenght){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-        mPasswordField.setFilters(fArray);
-
-        txt_forgotpass.setText(forgotText);
-        if(showForgot){
-            txt_forgotpass.setVisibility(VISIBLE);
-        }else{
-            txt_forgotpass.setVisibility(GONE);
-        }
-
-        BuilderKeyboard(maxLenght);
+        BuilderKeyboard();
 
     }
 
     public void KeyboardBuilder(String forgotText,boolean showForgot){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(255);
-        mPasswordField.setFilters(fArray);
+//        InputFilter[] fArray = new InputFilter[1];
+//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+//        mPassword.setFilters(fArray);
 
         txt_forgotpass.setText(forgotText);
         if(showForgot){
@@ -167,14 +148,30 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
         }else{
             txt_forgotpass.setVisibility(GONE);
         }
-        BuilderKeyboard(255);
+
+        BuilderKeyboard();
+
     }
 
+//    public void KeyboardBuilder(String forgotText,boolean showForgot){
+////        InputFilter[] fArray = new InputFilter[1];
+////        fArray[0] = new InputFilter.LengthFilter(255);
+////        mPassword.setFilters(fArray);
+//
+//        txt_forgotpass.setText(forgotText);
+//        if(showForgot){
+//            txt_forgotpass.setVisibility(VISIBLE);
+//        }else{
+//            txt_forgotpass.setVisibility(GONE);
+//        }
+//        BuilderKeyboard();
+//    }
 
-    public void KeyboardBuilder(boolean showForgot,int maxLenght){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-        mPasswordField.setFilters(fArray);
+
+    public void KeyboardBuilder(boolean showForgot){
+//        InputFilter[] fArray = new InputFilter[1];
+//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+//        mPassword.setFilters(fArray);
 
         txt_forgotpass.setText("Lupa kata sandi?");
         if(showForgot){
@@ -183,35 +180,35 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
             txt_forgotpass.setVisibility(GONE);
         }
 
-        BuilderKeyboard(maxLenght);
+        BuilderKeyboard();
 
     }
 
 
     public void KeyboardBuilder(int maxLenght){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-        mPasswordField.setFilters(fArray);
+//        InputFilter[] fArray = new InputFilter[1];
+//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+//        mPassword.setFilters(fArray);
 
         txt_forgotpass.setText("Lupa kata sandi?");
         txt_forgotpass.setVisibility(VISIBLE);
-        BuilderKeyboard(maxLenght);
+        BuilderKeyboard();
 
     }
 
     public void KeyboardBuilder(){
-        InputFilter[] fArray = new InputFilter[1];
-        fArray[0] = new InputFilter.LengthFilter(255);
-        mPasswordField.setFilters(fArray);
+//        InputFilter[] fArray = new InputFilter[1];
+//        fArray[0] = new InputFilter.LengthFilter(255);
+//        mPassword.setFilters(fArray);
         txt_forgotpass.setText("Lupa kata sandi?");
         txt_forgotpass.setVisibility(VISIBLE);
 
-        BuilderKeyboard(255);
+        BuilderKeyboard();
 
     }
 
 
-    private void BuilderKeyboard(final int maxLenght){
+    private void BuilderKeyboard(){
 
         img_finger.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -236,7 +233,7 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
             }
         });
 
-        mPasswordField.addTextChangedListener(new TextWatcher() {
+        mPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -244,33 +241,28 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                if(mPassword.length() > 0){
+                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_selected));
+                }else{
+                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
+                }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if(mPasswordField.length() > 0){
-                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_selected));
-                }else{
-                    mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
-                }
-                if(maxLenght == editable.length()) {
 
-                    completeListener.CompletePIN();
-                    Log.d("KeyboardCashit", "afterTextChanged: " + editable.length()+" "+mPasswordField.getText().toString());
-                }
             }
         });
 
         img_showpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mPasswordField.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
+                if (mPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())) {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_off_black_24dp));
-                    mPasswordField.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 } else {
                     img_showpassword.setImageDrawable(getResources().getDrawable(R.drawable.ic_visibility_black_24dp));
-                    mPasswordField.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 }
             }
         });
