@@ -17,11 +17,11 @@ import androidx.annotation.IdRes;
 
 public class KeyboardCashit extends LinearLayout implements View.OnClickListener {
 
-    public TextView mPasswordField;
-    public TextView txt_forgotpass;
-    public ImageView img_showpassword,img_finger;
-    public OnClickListener clickListener;
-    public CompleteListener completeListener;
+    private TextView mPasswordField;
+    private TextView txt_forgotpass;
+    private ImageView img_showpassword,img_finger;
+    private OnClickListener clickListener;
+    private CompleteListener completeListener;
 
     public KeyboardCashit(Context context) {
         super(context);
@@ -38,12 +38,12 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
         init();
     }
 
-    public void init() {
+    private void init() {
         inflate(getContext(), R.layout.keyboard, this);
         initViews();
     }
 
-    public void initViews() {
+    private void initViews() {
         mPasswordField = $(R.id.password_field);
         img_showpassword = $(R.id.img_showpassword);
         txt_forgotpass = $(R.id.txt_forgotpass);
@@ -97,7 +97,7 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
     }
 
     public interface CompleteListener{
-        void ComlpletePIN();
+        void CompletePIN();
     }
 
 
@@ -211,7 +211,7 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
     }
 
 
-    private void BuilderKeyboard(final int lenght){
+    private void BuilderKeyboard(final int maxLenght){
 
         img_finger.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -254,9 +254,11 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
                 }else{
                     mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
                 }
-                if(lenght == editable.length())
-                    completeListener.ComlpletePIN();
-                    Log.d("KeyboardCashit", "afterTextChanged: "+editable.length()+" "+mPasswordField.length());
+                if(maxLenght == editable.length()) {
+
+                    completeListener.CompletePIN();
+                    Log.d("KeyboardCashit", "afterTextChanged: " + editable.length()+" "+mPasswordField.getText().toString());
+                }
             }
         });
 

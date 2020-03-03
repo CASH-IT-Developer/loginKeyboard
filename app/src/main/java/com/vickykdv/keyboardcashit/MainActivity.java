@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         keyboardCashit= findViewById(R.id.keyboard);
+        keyboardCashit= findViewById(R.id.keyboard);
         keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,true);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
             @Override
-            public void ComlpletePIN() {
+            public void CompletePIN() {
                 //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
                 Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
 
