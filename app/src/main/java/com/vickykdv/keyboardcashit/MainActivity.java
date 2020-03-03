@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         keyboardCashit= findViewById(R.id.keyboard);
-        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6,true);
+        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,true);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override
             public void onFingerClick() {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        keyboardCashit.mPasswordField.addTextChangedListener(new TextWatcher() {
+        keyboardCashit.mPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
