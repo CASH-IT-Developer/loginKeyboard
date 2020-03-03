@@ -9,13 +9,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.IdRes;
 
-public class KeyboardCashit extends FrameLayout implements View.OnClickListener {
+public class KeyboardCashit extends LinearLayout implements View.OnClickListener {
 
     public TextView mPasswordField;
     public TextView txt_forgotpass;
@@ -213,17 +213,16 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
 
     private void BuilderKeyboard(final int lenght){
 
-            img_finger.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    try {
-                        clickListener.onFingerClick();
-                    } catch (Exception e) {
-                        Log.d("KeyboardCashit", "onClick: " + e.getMessage());
-                    }
+        img_finger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    clickListener.onFingerClick();
+                } catch (Exception e) {
+                    Log.d("KeyboardCashit", "onClick: " + e.getMessage());
                 }
-            });
+            }
+        });
 
 
         txt_forgotpass.setOnClickListener(new View.OnClickListener() {
@@ -255,8 +254,9 @@ public class KeyboardCashit extends FrameLayout implements View.OnClickListener 
                 }else{
                     mPasswordField.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
                 }
-                if(lenght == mPasswordField.length())
+                if(lenght == editable.length())
                     completeListener.ComlpletePIN();
+                    Log.d("KeyboardCashit", "afterTextChanged: "+editable.length()+" "+mPasswordField.length());
             }
         });
 

@@ -35,4 +35,5 @@ dependencies {
     apply plugin: 'com.github.dcendents.android-maven'
 
     group='com.github.CASH-IT-Developer'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }
