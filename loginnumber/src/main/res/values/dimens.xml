@@ -6,8 +6,4 @@
     <dimen name="_100dp">100dp</dimen>
     <dimen name="_48dp">48dp</dimen>
     <dimen name="_45dp">45dp</dimen>
-    <dimen name="dv_default_dot_size">15dp</dimen>
-    <dimen name="dv_default_dot_h_space">10dp</dimen>
-    <dimen name="dv_default_dot_v_space">10dp</dimen>
-    <dimen name="dv_default_dot_stroke_width">1dp</dimen>
 </resources>

@@ -8,6 +8,4 @@
     <color name="ck_red">#C9FF0000</color>
     <color name="ck_white">#ffffff</color>
     <color name="ck_green">#009688</color>
-    <color name="dv_default_dot_color">#107cff</color>
-    <color name="dv_default_dot_stroke_color">#cc1a52</color>
 </resources>
