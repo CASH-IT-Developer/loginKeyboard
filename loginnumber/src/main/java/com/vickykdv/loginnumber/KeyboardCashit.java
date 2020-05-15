@@ -2,6 +2,7 @@ package com.vickykdv.loginnumber;
 
 import android.content.Context;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -14,9 +15,10 @@ import android.widget.TextView;
 
 import androidx.annotation.IdRes;
 
+
 public class KeyboardCashit extends LinearLayout implements View.OnClickListener {
 
-    public TextView mPassword;
+    public TextView mPassword, password_hint;
     private TextView txt_forgotpass;
     private ImageView img_showpassword,img_finger;
     private OnClickListener clickListener;
@@ -44,6 +46,7 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
 
     private void initViews() {
         mPassword = $(R.id.password_field);
+        password_hint = $(R.id.password_hint);
         img_showpassword = $(R.id.img_showpassword);
         txt_forgotpass = $(R.id.txt_forgotpass);
         img_finger = $(R.id.img_finger);
@@ -66,14 +69,19 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
                 int charCount = editable.length();
                 if (charCount > 0) {
                     editable.delete(charCount - 1, charCount);
+                } else {
+                    password_hint.setVisibility(VISIBLE);
                 }
             }
         });
+
+
     }
 
     public void clearPassword(){
         if(mPassword.length()>0){
             mPassword.setText("");
+            password_hint.setVisibility(VISIBLE);
         }
     }
 
@@ -111,10 +119,17 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
     }
 
 
-    public void KeyboardBuilder(String forgotText,boolean showForgot,boolean showFinger){
-//        InputFilter[] fArray = new InputFilter[1];
-//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-//        mPassword.setFilters(fArray);
+    public void KeyboardBuilder(String forgotText, boolean showForgot, boolean showFinger, int maxLenght) {
+        InputFilter[] fArray = new InputFilter[1];
+        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+        mPassword.setFilters(fArray);
+
+
+        for (int i = 0; i < maxLenght; i++) {
+
+        }
+
+
 
         txt_forgotpass.setText(forgotText);
         if(showForgot){
@@ -136,22 +151,22 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
         BuilderKeyboard();
 
     }
-
-    public void KeyboardBuilder(String forgotText,boolean showForgot){
-//        InputFilter[] fArray = new InputFilter[1];
-//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-//        mPassword.setFilters(fArray);
-
-        txt_forgotpass.setText(forgotText);
-        if(showForgot){
-            txt_forgotpass.setVisibility(VISIBLE);
-        }else{
-            txt_forgotpass.setVisibility(GONE);
-        }
-
-        BuilderKeyboard();
-
-    }
+    //
+    //    public void KeyboardBuilder(String forgotText,boolean showForgot){
+    ////        InputFilter[] fArray = new InputFilter[1];
+    ////        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+    ////        mPassword.setFilters(fArray);
+    //
+    //        txt_forgotpass.setText(forgotText);
+    //        if(showForgot){
+    //            txt_forgotpass.setVisibility(VISIBLE);
+    //        }else{
+    //            txt_forgotpass.setVisibility(GONE);
+    //        }
+    //
+    //        BuilderKeyboard();
+    //
+    //    }
 
 //    public void KeyboardBuilder(String forgotText,boolean showForgot){
 ////        InputFilter[] fArray = new InputFilter[1];
@@ -168,33 +183,33 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
 //    }
 
 
-    public void KeyboardBuilder(boolean showForgot){
-//        InputFilter[] fArray = new InputFilter[1];
-//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-//        mPassword.setFilters(fArray);
+    //    public void KeyboardBuilder(boolean showForgot){
+    ////        InputFilter[] fArray = new InputFilter[1];
+    ////        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+    ////        mPassword.setFilters(fArray);
+    //
+    //        txt_forgotpass.setText("Lupa kata sandi?");
+    //        if(showForgot){
+    //            txt_forgotpass.setVisibility(VISIBLE);
+    //        }else{
+    //            txt_forgotpass.setVisibility(GONE);
+    //        }
+    //
+    //        BuilderKeyboard();
+    //
+    //    }
 
-        txt_forgotpass.setText("Lupa kata sandi?");
-        if(showForgot){
-            txt_forgotpass.setVisibility(VISIBLE);
-        }else{
-            txt_forgotpass.setVisibility(GONE);
-        }
 
-        BuilderKeyboard();
-
-    }
-
-
-    public void KeyboardBuilder(int maxLenght){
-//        InputFilter[] fArray = new InputFilter[1];
-//        fArray[0] = new InputFilter.LengthFilter(maxLenght);
-//        mPassword.setFilters(fArray);
-
-        txt_forgotpass.setText("Lupa kata sandi?");
-        txt_forgotpass.setVisibility(VISIBLE);
-        BuilderKeyboard();
-
-    }
+    //    public void KeyboardBuilder(int maxLenght){
+    ////        InputFilter[] fArray = new InputFilter[1];
+    ////        fArray[0] = new InputFilter.LengthFilter(maxLenght);
+    ////        mPassword.setFilters(fArray);
+    //
+    //        txt_forgotpass.setText("Lupa kata sandi?");
+    //        txt_forgotpass.setVisibility(VISIBLE);
+    //        BuilderKeyboard();
+    //
+    //    }
 
     public void KeyboardBuilder(){
 //        InputFilter[] fArray = new InputFilter[1];
@@ -242,9 +257,11 @@ public class KeyboardCashit extends LinearLayout implements View.OnClickListener
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(mPassword.length() > 0){
-                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_selected));
+                    password_hint.setVisibility(GONE);
+                    //                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_selected));
                 }else{
-                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
+                    password_hint.setVisibility(VISIBLE);
+                    //                    mPassword.setBackground(getResources().getDrawable(R.drawable.ck_edittext_style_default));
                 }
             }
 

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/ck_Primary"
     android:clickable="true"
     android:focusable="true">
 
@@ -9,7 +10,7 @@
         android:id="@+id/keyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-    </com.vickykdv.loginnumber.KeyboardCashit>
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="false"></com.vickykdv.loginnumber.KeyboardCashit>
 
 </RelativeLayout>

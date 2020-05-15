@@ -36,4 +36,7 @@ dependencies {
 
     group='com.github.CASH-IT-Developer'
     implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.chaos.view:pinview:1.4.2'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

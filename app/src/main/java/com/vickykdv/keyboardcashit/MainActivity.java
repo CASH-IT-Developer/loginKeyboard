@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         keyboardCashit= findViewById(R.id.keyboard);
-        keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,true);
+        keyboardCashit.KeyboardBuilder("Lupa kata sandi?", true, true, 6);
         keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
             @Override
             public void onFingerClick() {

@@ -1,65 +1,114 @@
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:ignore="UselessParent">
 
-        <RelativeLayout
+    <RelativeLayout
+        android:id="@+id/rl_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_24dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginEnd="@dimen/_24dp"
+        android:layout_marginBottom="@dimen/_24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/password_field"
+                android:id="@+id/password_hint"
                 style="@style/ckEditText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="@dimen/_14dp"
-                android:layout_marginTop="@dimen/_14dp"
-                android:layout_marginEnd="@dimen/_14dp"
-                android:layout_marginBottom="@dimen/_14dp"
-                android:background="@drawable/ck_edittext_style_default"
+                android:alpha="0.3"
                 android:enabled="true"
                 android:gravity="center_horizontal|center_vertical"
                 android:inputType="numberPassword"
                 android:singleLine="true"
+                android:text="111111"
+                android:textAlignment="textStart"
                 android:textIsSelectable="false"
-                android:textSize="24sp"
-                tools:ignore="TextViewEdits"
-                tools:text="123456" />
+                android:textSize="@dimen/_35dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextViewEdits" />
+
+            <TextView
+                android:id="@+id/password_field"
+                style="@style/ckEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:enabled="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="numberPassword"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/_35dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextViewEdits" />
 
             <ImageView
                 android:id="@+id/img_showpassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/password_field"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="@dimen/_14dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_visibility_off_black_24dp"
                 tools:ignore="ContentDescription,VectorDrawableCompat" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/txt_forgotpass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/_14dp"
-            android:padding="4dp"
-            android:text="@string/lupa_password"
-            android:textAlignment="center"
-            tools:text="Lupa password ?" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_field"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_14dp"
+        android:padding="4dp"
+        android:text="@string/lupa_password"
+        android:textAlignment="center"
+        tools:text="Lupa password ?" />
+
+    <RelativeLayout
+        android:id="@+id/rl_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_forgotpass"
+        android:layout_alignParentBottom="false"
+        android:background="@drawable/top_round">
 
         <TableLayout
             android:id="@+id/keyboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_14dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/_24dp">
 
             <TableRow style="@style/keyboard_row">
 
@@ -149,5 +198,6 @@
                     tools:ignore="ContentDescription,VectorDrawableCompat" />
             </TableRow>
         </TableLayout>
+    </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

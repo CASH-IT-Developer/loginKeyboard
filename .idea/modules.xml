@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KeyboardCashit.iml" filepath="$PROJECT_DIR$/KeyboardCashit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/loginnumber/loginnumber.iml" filepath="$PROJECT_DIR$/loginnumber/loginnumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KeyboardCashit.iml" filepath="$PROJECT_DIR$/KeyboardCashit.iml" group="KeyboardCashit" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="KeyboardCashit/app" />
+      <module fileurl="file://$PROJECT_DIR$/loginnumber/loginnumber.iml" filepath="$PROJECT_DIR$/loginnumber/loginnumber.iml" group="KeyboardCashit/loginnumber" />
     </modules>
   </component>
 </project>
