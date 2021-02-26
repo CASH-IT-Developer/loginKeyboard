@@ -17,50 +17,40 @@
         android:layout_marginEnd="@dimen/_24dp"
         android:layout_marginBottom="@dimen/_24dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/password_hint"
-                style="@style/ckEditText"
+            <com.chaos.view.PinView
+                android:id="@+id/passwordView"
+                style="@style/PinWidget.PinView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
-                android:enabled="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:inputType="numberPassword"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginEnd="@dimen/_14dp"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/nunito_bold"
+                android:gravity="center_horizontal|center_vertical|fill_vertical"
+                android:inputType="numberSigned|numberDecimal|numberPassword"
+                android:itemBackground="@drawable/circle_view_keyboard_login"
+                android:padding="@dimen/_8dp"
+                android:selectAllOnFocus="true"
                 android:singleLine="true"
-                android:text="111111"
-                android:textAlignment="textStart"
-                android:textIsSelectable="false"
-                android:textSize="@dimen/_35dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TextViewEdits" />
-
-            <TextView
-                android:id="@+id/password_field"
-                style="@style/ckEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.8"
-                android:enabled="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:inputType="numberPassword"
-                android:singleLine="true"
-                android:textAlignment="textStart"
-                android:textIsSelectable="false"
-                android:textSize="@dimen/_35dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TextViewEdits" />
+                android:textColor="@color/ck_white"
+                android:textSize="@dimen/_14dp"
+                app:cursorColor="@color/ck_white"
+                app:cursorWidth="0dp"
+                app:hideLineWhenFilled="true"
+                app:itemCount="6"
+                app:itemHeight="@dimen/_20dp"
+                app:itemSpacing="@dimen/_14dp"
+                app:itemWidth="@dimen/_20dp"
+                app:lineColor="@color/ck_grey"
+                app:viewType="none"
+                tools:text="123456" />
 
             <ImageView
                 android:id="@+id/img_showpassword"
@@ -69,14 +59,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_visibility_off_black_24dp"
                 tools:ignore="ContentDescription,VectorDrawableCompat" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 

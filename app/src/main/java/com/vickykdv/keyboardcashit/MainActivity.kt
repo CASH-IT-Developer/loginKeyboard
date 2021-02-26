@@ -1,83 +1,43 @@
-package com.vickykdv.keyboardcashit;
+package com.vickykdv.keyboardcashit
 
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.Toast;
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.vickykdv.loginnumber.FlickKeyboard
+import com.vickykdv.loginnumber.OnListener
 
-import androidx.appcompat.app.AppCompatActivity;
+class MainActivity : AppCompatActivity() {
+    private var flickKeyboard: FlickKeyboard? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-import com.vickykdv.loginnumber.KeyboardCashit;
+        flickKeyboard = findViewById(R.id.keyboard)
 
-
-public class MainActivity extends AppCompatActivity {
-
-    public KeyboardCashit keyboardCashit;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        keyboardCashit= findViewById(R.id.keyboard);
-        keyboardCashit.KeyboardBuilder("Lupa kata sandi?", true, true, 6);
-        keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
-            @Override
-            public void onFingerClick() {
-                Toast.makeText(MainActivity.this,"Finger Click ?",Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onForgotClick() {
-                Toast.makeText(MainActivity.this,"Forgot Click ?",Toast.LENGTH_LONG).show();
-            }
-
-        });
-
-        keyboardCashit.mPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if(editable.length() == 6){
-                    if(!keyboardCashit.getInputText().matches("123456")){
-                        keyboardCashit.clearPassword();
-                        Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
-                    }else{
-                        Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
-
-                    }
+        flickKeyboard!!.Builder(
+                forgotText = "Lupa kata sandi?",
+                showForgot = true,
+                showFinger = true,
+                showTogglePassword = true,
+                maxLenght = 3
+        )
+        flickKeyboard!!.setClickListener(object : OnListener {
+            override fun onCompleted(pin: String) {
+                if (pin != "123") {
+                    flickKeyboard!!.clearPassword()
+                    Toast.makeText(this@MainActivity, "Password salah", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "Password benar", Toast.LENGTH_LONG).show()
                 }
             }
-        });
 
-//        keyboardCashit.onCompletePIN(new KeyboardCashit.CompleteListener() {
-//            @Override
-//            public void CompletePIN() {
-//                //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
-//                Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
-//
-//                if(!keyboardCashit.getInputText().matches("123456")){
-//                  keyboardCashit.clearPassword();
-//                    Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
-//                }else{
-//                    Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
-//
-//                }
-//            }
-//
-//        });
+            override fun onFingerClick() {
+                Toast.makeText(this@MainActivity, "Finger Click ?", Toast.LENGTH_LONG).show()
+            }
 
-
-
-
-
+            override fun onForgotClick() {
+                Toast.makeText(this@MainActivity, "Forgot Click ?", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

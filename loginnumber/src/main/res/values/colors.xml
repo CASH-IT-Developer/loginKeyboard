@@ -8,4 +8,5 @@
     <color name="ck_red">#C9FF0000</color>
     <color name="ck_white">#ffffff</color>
     <color name="ck_green">#009688</color>
+    <color name="ck_grey">#7C7C7C</color>
 </resources>

@@ -46,44 +46,40 @@ Hide Password              |  Show Password
 
 
 ### Implementation in Programatically
-      
-          //Initial View ID
-          final KeyboardCashit keyboardCashit = findViewById(R.id.keyboard);
+        private var keyboardCashit: KeyboardCashit? = null
+          
+        //Initial View ID
+        keyboardCashit = findViewById(R.id.keyboard)
         
-          //Custom value
-          keyboardCashit.KeyboardBuilder("Lupa kata sandi?",true,6);
+        keyboardCashit!!.KeyboardBuilder(
+                forgotText = "Lupa kata sandi?", //Default "Lupa kata sandi?"
+                showForgot = true, //Defaul false 
+                showFinger = true, //Defaul false
+                showTogglePassword = true, //Defaul false
+                maxLenght = 3 ///Defaul 6
+        )
+        keyboardCashit!!.setClickListener(object : OnListener {
         
-          //Listener Clicked finger Icon (if Visibility ) and forgot password (if Visibility)
-          keyboardCashit.setClickListener(new KeyboardCashit.OnClickListener() {
-            @Override
-            public void onFingerClick() {
-                Toast.makeText(MainActivity.this,"Finger Click ?",Toast.LENGTH_LONG).show();
+            //OnCompleted Result
+            override fun onCompleted(pin: String) {
+                if (pin != "123") {
+                    keyboardCashit!!.clearPassword()
+                    Toast.makeText(this@MainActivity, "Password salah", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "Password benar", Toast.LENGTH_LONG).show()
+                }
             }
 
-            @Override
-            public void onForgotClick() {
-                Toast.makeText(MainActivity.this,"Forgot Click ?",Toast.LENGTH_LONG).show();
-                    }
-               });
+            //On Finger Icon Clicked
+            override fun onFingerClick() {
+                Toast.makeText(this@MainActivity, "Finger Click ?", Toast.LENGTH_LONG).show()
+            }
 
-
-          //Listen value PIN (check validasi with lenght PIN)
-          keyboard.onCompletePIN(new KeyboardCashit.CompleteListener() {
-                     @Override
-                     public void ComlpletePIN() {
-                    //                Toast.makeText(MainActivity.this,keyboardCashit.getInputText(),Toast.LENGTH_LONG).show();
-                                    Log.d("MainActivity", "ComlpletePIN: " + keyboardCashit.getInputText());
-                    
-                    //Testing Wrong password
-                                    if(!keyboardCashit.getInputText().matches("123456")){
-                                      keyboardCashit.clearPassword();
-                                        Toast.makeText(MainActivity.this,"Password salah",Toast.LENGTH_LONG).show();
-                                    }else{
-                                        Toast.makeText(MainActivity.this,"Password benar",Toast.LENGTH_LONG).show();
-                    
-                                    }
-                    }
-               });
+            //On Forgot Text Clicked
+            override fun onForgotClick() {
+                Toast.makeText(this@MainActivity, "Forgot Click ?", Toast.LENGTH_LONG).show()
+            }
+        })
         
         
    ### Code by vickykdv (https://github.com/vickyKDV) 

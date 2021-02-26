@@ -6,11 +6,11 @@
     android:clickable="true"
     android:focusable="true">
 
-    <com.vickykdv.loginnumber.KeyboardCashit
+    <com.vickykdv.loginnumber.FlickKeyboard
         android:id="@+id/keyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="false"></com.vickykdv.loginnumber.KeyboardCashit>
+        android:layout_centerInParent="false"></com.vickykdv.loginnumber.FlickKeyboard>
 
 </RelativeLayout>
