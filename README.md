@@ -53,9 +53,9 @@ Hide Password              |  Show Password
         
         keyboardCashit!!.KeyboardBuilder(
                 forgotText = "Lupa kata sandi?", //Default "Lupa kata sandi?"
-                showForgot = true, //Defaul false 
-                showFinger = true, //Defaul false
-                showTogglePassword = true, //Defaul false
+                showForgot = true, //Default false 
+                showFinger = true, //Default false
+                showTogglePassword = true, //Default false
                 maxLenght = 3 ///Defaul 6
         )
         keyboardCashit!!.setClickListener(object : OnListener {
