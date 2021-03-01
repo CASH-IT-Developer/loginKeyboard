@@ -46,40 +46,38 @@ Hide Password              |  Show Password
 
 
 ### Implementation in Programatically
-        private var keyboardCashit: KeyboardCashit? = null
-          
-        //Initial View ID
-        keyboardCashit = findViewById(R.id.keyboard)
+            private var flickKeyboard: FlickKeyboard? = null
         
-        keyboardCashit!!.KeyboardBuilder(
-                forgotText = "Lupa kata sandi?", //Default "Lupa kata sandi?"
-                showForgot = true, //Default false 
-                showFinger = true, //Default false
-                showTogglePassword = true, //Default false
-                maxLenght = 3 ///Defaul 6
-        )
-        keyboardCashit!!.setClickListener(object : OnListener {
+                flickKeyboard = findViewById(R.id.keyboard)
         
-            //OnCompleted Result
-            override fun onCompleted(pin: String) {
-                if (pin != "123") {
-                    keyboardCashit!!.clearPassword()
-                    Toast.makeText(this@MainActivity, "Password salah", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(this@MainActivity, "Password benar", Toast.LENGTH_LONG).show()
-                }
-            }
-
-            //On Finger Icon Clicked
-            override fun onFingerClick() {
-                Toast.makeText(this@MainActivity, "Finger Click ?", Toast.LENGTH_LONG).show()
-            }
-
-            //On Forgot Text Clicked
-            override fun onForgotClick() {
-                Toast.makeText(this@MainActivity, "Forgot Click ?", Toast.LENGTH_LONG).show()
-            }
-        })
+                flickKeyboard!!.Builder(
+                        forgotText = "Lupa kata sandi?",
+                        showForgot = true,
+                        showFinger = true,
+                        showTogglePassword = true,
+                        maxLenght = 3
+                )
+                
+                flickKeyboard!!.setClickListener(object : OnListener {
+                    override fun onCompleted(pin: String) {
+                        if (pin != "123") {
+                            flickKeyboard!!.clearPassword()
+                            Toast.makeText(this@MainActivity, "Password salah", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(this@MainActivity, "Password benar", Toast.LENGTH_LONG).show()
+                        }
+                    }
+        
+                    override fun onFingerClick() {
+                        Toast.makeText(this@MainActivity, "Finger Click ?", Toast.LENGTH_LONG).show()
+                    }
+        
+                    override fun onForgotClick() {
+                        Toast.makeText(this@MainActivity, "Forgot Click ?", Toast.LENGTH_LONG).show()
+                    }
+                })
+           
+        }
         
         
    ### Code by vickykdv (https://github.com/vickyKDV) 

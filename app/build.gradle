@@ -28,11 +28,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation project(':loginnumber')
+//    implementation project(':loginnumber')
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-//    implementation 'com.github.CASH-IT-Developer:loginKeyboard:1.0.6'
+    implementation 'com.github.CASH-IT-Developer:loginKeyboard:1.0.14'
 }
 repositories {
     mavenCentral()
